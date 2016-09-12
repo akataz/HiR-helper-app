@@ -94,8 +94,8 @@ var createPairs = function () {
       currentPair.push(studentsArr[j]);
       studentsArr[j] = '';
       if (currentPair.length >= 2) {
-        students[currentPair[0]].push(currentPair[1]);
-        students[currentPair[1]].push(currentPair[0]);
+        currentPair[0] !== 'SOLO' ? students[currentPair[0]].push(currentPair[1]) : null;
+        currentPair[1] !== 'SOLO' ? students[currentPair[1]].push(currentPair[0]) : null;
 
         pairs.push(currentPair.slice());
         currentPair.length = 0;
